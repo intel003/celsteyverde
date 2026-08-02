@@ -753,4 +753,35 @@ body::before {
     .fiscal-split {
         grid-template-columns: 1fr;
     }
+    
+    /* Adjust grid columns to prevent images getting too small */
+    .top-tier {
+        grid-template-columns: 1fr;
+    }
+    .nivel1-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .nivel2-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .otras-secretarias-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on tablet */
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nivel1-grid, .nivel2-grid {
+        grid-template-columns: 1fr; /* Full width for Nivel 1 y 2 on small phones */
+    }
+    .otras-secretarias-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for the small cards */
+        gap: 0.8rem;
+    }
+    .candidato-card:not(.mini-card) .candidata-img {
+        max-height: 350px;
+    }
+    .mini-card .candidata-img {
+        max-width: 100%; /* Use full width of the smaller column */
+    }
 }
