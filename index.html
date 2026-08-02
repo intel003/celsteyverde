@@ -502,11 +502,21 @@
                 <p>Nuestra agenda es la agenda de los trabajadores y trabajadoras.</p>
             </div>
             
-            <!-- Video de Debate Destacado -->
-            <div class="debate-video-container mb-6 text-center" style="position: relative; display: inline-block; cursor: pointer; width: 100%;" id="open-video-modal-btn">
-                <iframe src="https://www.instagram.com/p/DbZGCr-JwaP/embed" width="100%" height="480" style="max-width: 400px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); pointer-events: none;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-                <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 10;"></div>
-                <p class="text-verde" style="margin-top: 1rem; font-weight: bold; font-size: 0.95rem;">▶ HAZ CLIC PARA AMPLIAR EL VIDEO</p>
+            <!-- Videos Destacados -->
+            <div class="videos-destacados-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
+                <!-- Video de Debate -->
+                <div class="debate-video-container text-center" style="position: relative; cursor: pointer;" id="open-video-modal-btn">
+                    <iframe src="https://www.instagram.com/p/DbZGCr-JwaP/embed" width="300" height="480" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); pointer-events: none;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 10;"></div>
+                    <p class="text-verde" style="margin-top: 1rem; font-weight: bold; font-size: 0.95rem;">▶ HAZ CLIC PARA VER EL DEBATE</p>
+                </div>
+                <!-- Video de Fiscales -->
+                <div class="debate-video-container text-center" style="position: relative; cursor: pointer;" id="open-video-modal-2-btn">
+                    <!-- We use the same iframe trick but we'll show twitter embed in modal, or use twitframe here -->
+                    <iframe src="https://twitframe.com/show?url=https://x.com/SYdrny/status/2084027931114766697" width="300" height="480" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); pointer-events: none; background: white;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 10;"></div>
+                    <p class="text-verde" style="margin-top: 1rem; font-weight: bold; font-size: 0.95rem;">▶ HAZ CLIC PARA VER SOLICITUD DE FISCALES</p>
+                </div>
             </div>
 
             <div class="propuestas-grid">
@@ -541,12 +551,7 @@
             <h2 class="mb-4">Un Sindicato Abierto</h2>
             <p class="lead mb-6">Necesitamos tu ayuda para cuidar el voto y asegurar la transparencia este 3 de septiembre.</p>
             <div class="form-container form-centered">
-                <form id="fiscal-form" class="fiscal-form">
-                    <input type="text" placeholder="Nombre completo" required>
-                    <input type="tel" placeholder="Teléfono" required>
-                    <input type="text" placeholder="Lugar de trabajo (Sucursal)" required>
-                    <button type="submit" class="btn btn-verde-glow">Quiero ser Fiscal</button>
-                </form>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVzjz8iIbjWReZjHMBH0BF15VmC5YGcYTGp8OHFr4R-1LAkg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn-blink">Click Acá para ser Fiscal</a>
             </div>
         </div>
     </section>
@@ -556,7 +561,7 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-video-container">
-                <iframe src="https://www.instagram.com/p/DbZGCr-JwaP/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                <iframe id="modalIframe" src="" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true" style="background: white;"></iframe>
             </div>
         </div>
     </div>
@@ -594,6 +599,12 @@
             <p>&copy; 2026 Lista Celeste y Verde. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="#" target="_blank" class="wa-float" title="Agregame al canal de WhatsApp para ver las novedades">
+        <svg class="wa-float-icon" viewBox="0 0 24 24"><path d="M12.012 2c5.506 0 9.99 4.475 9.99 9.98 0 2.14-.683 4.122-1.838 5.74L21.43 22l-4.39-1.15a9.92 9.92 0 0 1-5.028 1.35c-5.506 0-9.99-4.475-9.99-9.98S6.506 2 12.012 2zm0 1.637c-4.604 0-8.353 3.743-8.353 8.343 0 1.828.587 3.518 1.583 4.908l.147.205-1.306 3.86 3.96-1.04.195.116a8.27 8.27 0 0 0 3.774.912c4.604 0 8.353-3.743 8.353-8.343S16.616 3.637 12.012 3.637zm4.72 11.233c-.258-.13-1.528-.755-1.764-.842-.236-.087-.408-.13-.58.13-.172.26-.667.842-.818 1.015-.15.174-.301.196-.56.066-.258-.13-1.09-.402-2.077-1.284-.768-.686-1.287-1.534-1.437-1.794-.15-.26-.016-.401.113-.53.116-.115.258-.302.387-.453.13-.151.173-.26.26-.432.086-.173.043-.324-.022-.454-.065-.13-.58-1.401-.795-1.92-.21-.506-.423-.438-.58-.446-.15-.007-.323-.009-.495-.009-.172 0-.451.065-.688.324-.236.26-.903.883-.903 2.152 0 1.27.924 2.498 1.053 2.671.129.173 1.821 2.781 4.412 3.899 2.59 1.118 2.59.745 3.064.69.474-.055 1.528-.624 1.743-1.226.215-.602.215-1.118.15-1.226-.064-.108-.236-.173-.495-.303z"/></svg>
+        <span class="wa-float-tooltip">Agregame al canal de WTS para novedades</span>
+    </a>
 
     <script src="script.js"></script>
 </body>

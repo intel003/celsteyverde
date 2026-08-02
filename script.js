@@ -40,30 +40,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modal Logic
     const mainVideoTrigger = document.getElementById('open-video-modal-btn');
+    const mainVideoTrigger2 = document.getElementById('open-video-modal-2-btn');
     const debateCardTrigger = document.getElementById('debate-card');
     const videoModal = document.getElementById('videoModal');
+    const modalIframe = document.getElementById('modalIframe');
     const closeModal = document.querySelector('.close-modal');
 
-    if (videoModal && closeModal) {
+    if (videoModal && closeModal && modalIframe) {
+        const openVideoModal = (srcUrl) => {
+            modalIframe.src = srcUrl;
+            videoModal.classList.add('show');
+        };
+
         if (mainVideoTrigger) {
             mainVideoTrigger.addEventListener('click', () => {
-                videoModal.classList.add('show');
+                openVideoModal('https://www.instagram.com/p/DbZGCr-JwaP/embed');
+            });
+        }
+        if (mainVideoTrigger2) {
+            mainVideoTrigger2.addEventListener('click', () => {
+                openVideoModal('https://twitframe.com/show?url=https://x.com/SYdrny/status/2084027931114766697');
             });
         }
         if (debateCardTrigger) {
             debateCardTrigger.addEventListener('click', () => {
-                videoModal.classList.add('show');
+                openVideoModal('https://www.instagram.com/p/DbZGCr-JwaP/embed');
             });
         }
 
-        closeModal.addEventListener('click', () => {
+        const closeVideo = () => {
             videoModal.classList.remove('show');
-        });
+            setTimeout(() => { modalIframe.src = ''; }, 300); // Stop video playing in background
+        };
+
+        closeModal.addEventListener('click', closeVideo);
 
         // Close modal when clicking outside the content
         videoModal.addEventListener('click', (e) => {
             if (e.target === videoModal) {
-                videoModal.classList.remove('show');
+                closeVideo();
             }
         });
     }
@@ -104,16 +119,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeImageModalBtn = document.querySelector('.close-image-modal');
 
     if (imageModal && modalImage && closeImageModalBtn) {
-        // Add click event to all candidate cards
+        // Add click event to only the candidate images, not the whole card
         candidateCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const imgElement = card.querySelector('img');
-                if (imgElement) {
+            const imgElement = card.querySelector('.candidata-img');
+            if (imgElement) {
+                imgElement.style.cursor = 'pointer';
+                imgElement.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent triggering other card events
                     modalImage.src = imgElement.src;
                     imageModal.classList.add('show');
                     document.body.style.overflow = 'hidden'; // Prevent scrolling
-                }
-            });
+                });
+            }
         });
 
         // Close modal when clicking the X

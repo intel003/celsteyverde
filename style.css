@@ -823,3 +823,73 @@ body::before {
         max-width: 100%; /* Use full width of the smaller column */
     }
 }
+
+/* WhatsApp Floating Button */
+.wa-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+.wa-float:hover {
+    transform: scale(1.1);
+    color: #FFF;
+}
+.wa-float-icon {
+    width: 35px;
+    height: 35px;
+    fill: currentColor;
+}
+.wa-float-tooltip {
+    position: absolute;
+    right: 75px;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+.wa-float:hover .wa-float-tooltip {
+    opacity: 1;
+}
+
+/* Blinking Button */
+@keyframes blinkDual {
+    0% { background-color: var(--color-celeste); box-shadow: 0 0 10px var(--color-celeste); }
+    50% { background-color: var(--color-verde); box-shadow: 0 0 20px var(--color-verde); }
+    100% { background-color: var(--color-celeste); box-shadow: 0 0 10px var(--color-celeste); }
+}
+.btn-blink {
+    animation: blinkDual 1.5s infinite;
+    color: #fff !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn-blink:hover {
+    animation-play-state: paused;
+    transform: scale(1.05);
+}
+ 
+ 
