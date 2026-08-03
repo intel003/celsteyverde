@@ -891,5 +891,23 @@ body::before {
     animation-play-state: paused;
     transform: scale(1.05);
 }
+
+/* Color swap animations for PODÉS ELEGIR */
+@keyframes colorSwapCeleste {
+    0%, 100% { color: var(--color-celeste); text-shadow: 0 0 10px rgba(0, 180, 216, 0.5); }
+    50% { color: var(--color-verde); text-shadow: 0 0 10px rgba(45, 201, 55, 0.5); }
+}
+@keyframes colorSwapVerde {
+    0%, 100% { color: var(--color-verde); text-shadow: 0 0 10px rgba(45, 201, 55, 0.5); }
+    50% { color: var(--color-celeste); text-shadow: 0 0 10px rgba(0, 180, 216, 0.5); }
+}
+.blink-celeste {
+    animation: colorSwapCeleste 4s infinite ease-in-out;
+    display: inline-block;
+}
+.blink-verde {
+    animation: colorSwapVerde 4s infinite ease-in-out;
+    display: inline-block;
+}
  
  
