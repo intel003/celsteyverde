@@ -918,5 +918,48 @@ body::before {
 .btn-blink-slow:hover {
     animation-play-state: paused;
 }
+
+/* Floating Slogan on Hero Image */
+.slogan-flotante {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    transform: rotate(-3deg);
+    z-index: 10;
+    text-align: right;
+    font-weight: 900;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    opacity: 0.95;
+    transition: transform 0.3s ease;
+}
+.slogan-flotante:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+.bg-celeste-brush {
+    background-color: var(--color-celeste);
+    color: #fff;
+    padding: 6px 16px;
+    box-shadow: -2px 4px 0px rgba(0,0,0,0.2);
+    display: inline-block;
+    margin-bottom: 6px;
+    clip-path: polygon(1% 0, 100% 3%, 99% 100%, 0 97%);
+}
+.bg-verde-brush {
+    background-color: var(--color-verde);
+    color: #fff;
+    padding: 6px 16px;
+    box-shadow: -2px 4px 0px rgba(0,0,0,0.2);
+    display: inline-block;
+    clip-path: polygon(0 2%, 98% 0, 100% 98%, 2% 100%);
+}
+
+@media (max-width: 768px) {
+    .slogan-flotante {
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.95rem;
+    }
+}
  
  
