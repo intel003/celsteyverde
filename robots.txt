@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://intel003.github.io/celsteyverde/sitemap.xml
