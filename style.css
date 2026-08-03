@@ -909,5 +909,14 @@ body::before {
     animation: colorSwapVerde 4s infinite ease-in-out;
     display: inline-block;
 }
+
+/* Slow blink animation for buttons */
+.btn-blink-slow {
+    animation: blinkDual 4s infinite ease-in-out;
+    color: #fff !important;
+}
+.btn-blink-slow:hover {
+    animation-play-state: paused;
+}
  
  
