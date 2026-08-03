@@ -43,7 +43,7 @@ body::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.15; /* Increased opacity to make watermark clearly visible */
+    opacity: 0.35; /* Increased opacity to make background logo much more visible */
     z-index: -2;
     pointer-events: none;
 }
@@ -83,7 +83,7 @@ body::before {
     margin-bottom: 3rem;
 }
 
-.bg-light { background-color: rgba(248, 250, 252, 0.4); } /* Made background more transparent to show watermark */
+.bg-light { background-color: rgba(248, 250, 252, 0.15); } /* Reduced background opacity to let watermark shine through */
 .bg-dark { background-color: var(--color-dark); }
 .bg-black { background-color: var(--color-darker); }
 .bg-gradient {
