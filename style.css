@@ -963,3 +963,49 @@ body::before {
 }
  
  
+/* Bottom Slogan Block */
+.slogan-flotante-bottom {
+    width: 100%;
+    text-align: center;
+    padding: 20px 10px 40px;
+    background-color: var(--color-light); /* Or transparent if we want it to float over the next section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    position: relative;
+    margin-top: -30px; /* Pull it up slightly under the image */
+}
+
+.slogan-line {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: skewX(-10deg);
+    padding: 8px 24px;
+    box-shadow: -3px 5px 0px rgba(0,0,0,0.2);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.slogan-line:hover {
+    transform: skewX(-10deg) scale(1.05);
+}
+
+.bg-dark-brush {
+    background-color: #1a1a1a;
+    color: #fff;
+    clip-path: polygon(1% 0, 99% 2%, 100% 98%, 0 100%);
+}
+
+@media (max-width: 768px) {
+    .slogan-line {
+        font-size: 1.1rem;
+        padding: 6px 16px;
+    }
+}
+
