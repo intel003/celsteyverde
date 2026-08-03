@@ -516,17 +516,26 @@
             <!-- Videos Destacados -->
             <div class="videos-destacados-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
                 <!-- Video de Debate -->
-                <div class="debate-video-container text-center" style="position: relative; cursor: pointer;" id="open-video-modal-btn">
-                    <iframe src="https://www.instagram.com/p/DbZGCr-JwaP/embed" width="300" height="480" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); pointer-events: none;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 10;"></div>
-                    <p class="text-verde" style="margin-top: 1rem; font-weight: bold; font-size: 0.95rem;">▶ HAZ CLIC PARA VER EL DEBATE</p>
+                <div class="video-preview-card text-center" id="open-video-modal-btn">
+                    <div class="video-poster-box">
+                        <img src="LISTA_20260727_122335_0000.png" alt="Debate Instagram" class="video-poster-img" loading="lazy">
+                        <div class="play-button-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <span class="video-badge-tag">INSTAGRAM REEL</span>
+                    </div>
+                    <p class="text-verde" style="margin-top: 0.8rem; font-weight: bold; font-size: 1rem;">▶ CLIC PARA VER EL DEBATE</p>
                 </div>
                 <!-- Video de Fiscales -->
-                <div class="debate-video-container text-center" style="position: relative; cursor: pointer;" id="open-video-modal-2-btn">
-                    <!-- We use the same iframe trick but we'll show twitter embed in modal, or use twitframe here -->
-                    <iframe src="https://twitframe.com/show?url=https://x.com/SYdrny/status/2084027931114766697" width="300" height="480" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); pointer-events: none; background: white;" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-                    <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 10;"></div>
-                    <p class="text-verde" style="margin-top: 1rem; font-weight: bold; font-size: 0.95rem;">▶ HAZ CLIC PARA VER SOLICITUD DE FISCALES</p>
+                <div class="video-preview-card text-center" id="open-video-modal-2-btn">
+                    <div class="video-poster-box">
+                        <img src="sebastian_gabriel_ydrny.png" alt="Solicitud de Fiscales" class="video-poster-img" loading="lazy">
+                        <div class="play-button-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <span class="video-badge-tag">VIDEO X (TWITTER)</span>
+                    </div>
+                    <p class="text-verde" style="margin-top: 0.8rem; font-weight: bold; font-size: 1rem;">▶ CLIC PARA VER SOLICITUD DE FISCALES</p>
                 </div>
             </div>
 
@@ -569,10 +578,15 @@
 
     <!-- Video Modal -->
     <div id="videoModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content" style="text-align: center;">
             <span class="close-modal">&times;</span>
             <div class="modal-video-container">
-                <iframe id="modalIframe" src="" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true" style="background: white;"></iframe>
+                <iframe id="modalIframe" src="" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true" style="background: white;" loading="lazy"></iframe>
+            </div>
+            <div style="margin-top: 15px;">
+                <a id="modalDirectLink" href="#" target="_blank" rel="noopener noreferrer" class="btn" style="background: var(--color-celeste); color: #fff; font-size: 0.85rem; padding: 8px 16px; border-radius: 20px; text-decoration: none; display: inline-block;">
+                    🔗 Abrir en la App Original
+                </a>
             </div>
         </div>
     </div>

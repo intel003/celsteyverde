@@ -47,24 +47,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.querySelector('.close-modal');
 
     if (videoModal && closeModal && modalIframe) {
-        const openVideoModal = (srcUrl) => {
+        const modalDirectLink = document.getElementById('modalDirectLink');
+        const openVideoModal = (srcUrl, directUrl) => {
             modalIframe.src = srcUrl;
+            if (modalDirectLink) {
+                modalDirectLink.href = directUrl || srcUrl;
+            }
             videoModal.classList.add('show');
         };
 
         if (mainVideoTrigger) {
             mainVideoTrigger.addEventListener('click', () => {
-                openVideoModal('https://www.instagram.com/p/DbZGCr-JwaP/embed');
+                openVideoModal('https://www.instagram.com/p/DbZGCr-JwaP/embed', 'https://www.instagram.com/p/DbZGCr-JwaP/');
             });
         }
         if (mainVideoTrigger2) {
             mainVideoTrigger2.addEventListener('click', () => {
-                openVideoModal('https://twitframe.com/show?url=https://x.com/SYdrny/status/2084027931114766697');
+                openVideoModal('https://twitframe.com/show?url=https://x.com/SYdrny/status/2084027931114766697', 'https://x.com/SYdrny/status/2084027931114766697');
             });
         }
         if (debateCardTrigger) {
             debateCardTrigger.addEventListener('click', () => {
-                openVideoModal('https://www.instagram.com/p/DbZGCr-JwaP/embed');
+                openVideoModal('https://www.instagram.com/p/DbZGCr-JwaP/embed', 'https://www.instagram.com/p/DbZGCr-JwaP/');
             });
         }
 
