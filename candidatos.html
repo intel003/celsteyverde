@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los Candidatos - Lista Celeste y Verde SEC</title>
+    <meta name="description" content="Conocé a toda la lista Celeste y Verde del Sindicato de Empleados de Comercio. Secretarías, vocales titulares y suplentes.">
+    <meta name="robots" content="index, follow">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-candidatos-header {
+            background: linear-gradient(135deg, var(--color-darker) 0%, #0a1628 100%);
+            padding: 100px 0 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-candidatos-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(56,182,255,0.1) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 50%, rgba(0,191,99,0.1) 0%, transparent 60%);
+        }
+        .page-candidatos-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        .page-candidatos-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .page-candidatos-header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .btn-volver {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: rgba(56,182,255,0.15);
+            border: 2px solid var(--color-celeste);
+            color: var(--color-celeste);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .btn-volver:hover {
+            background: var(--color-celeste);
+            color: #fff;
+            transform: translateX(-4px);
+        }
+        .candidatos-page-content {
+            padding: 60px 0;
+            background-color: var(--color-light);
+        }
+        .nivel-titulo {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(90deg, var(--color-celeste), var(--color-verde)) 1;
+        }
+        .nivel-titulo h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--color-dark);
+        }
+        .nivel-titulo p {
+            color: var(--color-gray);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <img src="logo.jpg" alt="Logo Celeste y Verde" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 5px rgba(0,0,0,0.3);">
+                <span style="display: flex; flex-direction: column; line-height: 1.1;">
+                    <span class="text-white" style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">En comercio la lista de los trabajadores</span>
+                    <span><span class="text-celeste" style="font-size: 1.4rem; font-weight: 900;">Celeste</span> <span class="text-white" style="font-size: 1rem;">y</span> <span class="text-verde" style="font-size: 1.4rem; font-weight: 900;">Verde</span></span>
+                </span>
+            </a>
+            <button class="mobile-toggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#propuestas">Propuestas</a></li>
+                <li><a href="index.html#sumate">Sumate a Fiscalizar</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header de la página -->
+    <div class="page-candidatos-header">
+        <div class="container">
+            <h1>🗳️ Toda la <span class="text-celeste">Lista Celeste</span> y <span class="text-verde">Verde</span></h1>
+            <p>Conocé a cada uno de los candidatos que componen nuestra lista. Trabajadores de base con recibo de sueldo real.</p>
+            <a href="index.html" class="btn-volver">← Volver al inicio</a>
+        </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="candidatos-page-content">
+        <div class="container">
+
+            <!-- Buscador -->
+            <div class="search-container text-center mb-6">
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M10 2a8 8 0 105.293 13.707l5.707 5.707 1.414-1.414-5.707-5.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
+                    <input type="text" id="candidateSearch" class="search-input" placeholder="Buscar por nombre o cargo...">
+                </div>
+            </div>
+
+            <!-- Nivel 1: Secretarías Principales de Apoyo -->
+            <div class="nivel-titulo mt-6">
+                <h2>Secretarías de Apoyo</h2>
+                <p>Equipo de trabajo para las principales áreas gremiales</p>
+            </div>
+            <div class="candidatos-tier mt-6">
+                <div class="candidatas-grid nivel1-grid">
+                    <div class="candidato-card" data-name="sergio ortiz" data-cargo="secretario de asuntos gremiales">
+                        <img src="sergio_ortiz.png" alt="Sergio Ortiz" class="candidata-img" loading="lazy" decoding="async">
+                        <div class="candidato-info">
+                            <span class="candidato-puesto text-celeste">Secretaría de Asuntos Gremiales</span>
+                        </div>
+                        <div class="candidata-socials">
+                            <a href="https://x.com/Sergio_OrtizOk?s=20" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                            <a href="https://www.instagram.com/ortiz.sergio_ok_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="candidato-card" data-name="jorge lópez" data-cargo="subsecretario de asuntos gremiales">
+                        <img src="lopez.png" alt="Jorge López" class="candidata-img" loading="lazy" decoding="async">
+                        <div class="candidato-info">
+                            <span class="candidato-puesto text-verde">Subsecretaría de Asuntos Gremiales</span>
+                        </div>
+                        <div class="candidata-socials">
+                            <a href="https://x.com/jorgelopezsec?s=20" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                            <a href="https://www.instagram.com/jorgelopezsec?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="candidato-card" data-name="sebastián ydrny" data-cargo="secretario de la juventud">
+                        <img src="sebastian_gabriel_ydrny.png" alt="Sebastián Ydrny" class="candidata-img" loading="lazy" decoding="async">
+                        <div class="candidato-info">
+                            <span class="candidato-puesto text-celeste">Secretaría de la Juventud</span>
+                        </div>
+                        <div class="candidata-socials">
+                            <a href="https://x.com/SYdrny" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                            <a href="https://www.instagram.com/sebasydrny?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="candidato-card" data-name="oscar carrozas" data-cargo="secretario de encuadramiento y estadística">
+                        <img src="oscar_carrozas.png" alt="Oscar Carrozas" class="candidata-img" loading="lazy" decoding="async">
+                        <div class="candidato-info">
+                            <span class="candidato-puesto text-verde">Sec. Encuadramiento y Estadística</span>
+                        </div>
+                        <div class="candidata-socials">
+                            <a href="https://x.com/oscarcarrozaz?s=20" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                            <a href="https://www.instagram.com/carrozaz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nivel 2 -->
+            <div class="nivel-titulo mt-6">
+                <h2>Más Secretarías y Vocales Titulares</h2>
+            </div>
+            <div class="candidatos-tier mt-4 mb-6">
+                <div class="candidatas-grid nivel2-grid">
+                    <div class="candidato-card" data-name="laura núñez" data-cargo="secretaria de estadística y defensa al consumidor">
+                        <img src="laura.png" alt="Laura Núñez" class="candidata-img" loading="lazy" decoding="async">
+                        <div class="candidato-info"><span class="candidato-puesto text-celeste">Sec. Estadística y Defensa</span></div>
+                        <div class="candidata-socials">
+                            <a href="https://x.com/lauris_nunez?s=20" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                            <a href="https://www.instagram.com/lauranunez9627" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="candidato-card" data-name="silvio gramajo" data-cargo="secretario de prensa y difusión">
+                        <img src="silvio.jpg" alt="Silvio Gramajo" class="candidata-img" loading="lazy" decoding="async">
+                        <div class="candidato-info"><span class="candidato-puesto text-verde">Sec. Prensa y Difusión</span></div>
+                        <div class="candidata-socials">
+                            <a href="https://x.com/silvio_gramajo?s=20" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                            <a href="https://www.instagram.com/silvio_gramajo_06" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="candidato-card" data-name="diego rojas" data-cargo="vocal titular">
+                        <img src="diego_rojas.png" alt="Diego Rojas" class="candidata-img" loading="lazy" decoding="async">
+                        <div class="candidato-info"><span class="candidato-puesto text-celeste">Vocal Titular</span></div>
+                        <div class="candidata-socials">
+                            <a href="https://x.com/diegoteruben80?s=20" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                            <a href="https://www.instagram.com/diego.r.rojas.5" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="candidato-card" data-name="sergio leguizamón" data-cargo="vocal titular">
+                        <img src="sergio.png" alt="Sergio Leguizamón" class="candidata-img" loading="lazy" decoding="async">
+                        <div class="candidato-info"><span class="candidato-puesto text-verde">Vocal Titular</span></div>
+                        <div class="candidata-socials">
+                            <a href="https://x.com/Sergiog55553274?s=20" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                            <a href="https://www.instagram.com/sglegui" target="_blank" rel="noopener noreferrer" class="social-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nivel 3: El resto -->
+            <div class="nivel-titulo mt-6">
+                <h2>Todas las Secretarías, Vocales y Revisores</h2>
+            </div>
+            <div class="candidatos-tier mt-4 mb-6">
+                <div class="candidatas-grid otras-secretarias-grid">
+                    <div class="candidato-card mini-card" data-name="romina solano" data-cargo="secretaria de administracion"><img src="LISTA_20260727_211905_0000.png" alt="Romina Solano" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Secretaría de Administración</span></div></div>
+                    <div class="candidato-card mini-card" data-name="karol victoria churio" data-cargo="secretaria de finanzas"><img src="LISTA_20260727_213034_0000.png" alt="Karol Victoria Churio" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Secretaría de Finanzas</span></div></div>
+                    <div class="candidato-card mini-card" data-name="emiliano fondevila" data-cargo="secretaria de organizacion"><img src="LISTA_20260727_234730_0000.png" alt="Emiliano Fondevila" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Secretaría de Organización</span></div></div>
+                    <div class="candidato-card mini-card" data-name="hernan madia" data-cargo="subsecretario de organizacion"><img src="LISTA_20260727_234730_0001.png" alt="Hernan Madia" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Subsecretaría de Organización</span></div></div>
+                    <div class="candidato-card mini-card" data-name="ana de carlo" data-cargo="secretaria de turismo"><img src="LISTA_20260728_142328_0000.png" alt="Ana de Carlo" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Secretaría de Turismo</span></div></div>
+                    <div class="candidato-card mini-card" data-name="daniel mayorano" data-cargo="secretario de cultura y capacitación"><img src="LISTA_20260728_153102_0000.png" alt="Daniel Mayorano" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Sec. Cultura y Capacitación</span></div></div>
+                    <div class="candidato-card mini-card" data-name="celeste poelstra" data-cargo="secretaria de actas y documentación"><img src="LISTA_20260728_160348_0002.png" alt="Celeste Poelstra" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Sec. Actas y Documentación</span></div></div>
+                    <div class="candidato-card mini-card" data-name="marcelo fernandez" data-cargo="secretario de higiene medicina y seguridad en el trabajo"><img src="LISTA_20260728_162136_0000.png" alt="Marcelo Fernandez" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Sec. Higiene y Gremial</span></div></div>
+                    <div class="candidato-card mini-card" data-name="veronica galvan" data-cargo="secretaria de asuntos legislativos"><img src="LISTA_20260728_164812_0000.png" alt="Veronica Galvan" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Sec. Asuntos Legislativos</span></div></div>
+                    <div class="candidato-card mini-card" data-name="amancay sanchez" data-cargo="secretaria de mutual y cooperativas"><img src="LISTA_20260728_172833_0000.png" alt="Amancay Sanchez" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Sec. Mutual y Cooperativas</span></div></div>
+                    <div class="candidato-card mini-card" data-name="belen cubilla" data-cargo="vocal titular"><img src="LISTA_20260728_174826_0000.png" alt="Belen Cubilla" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Vocal Titular</span></div></div>
+                    <div class="candidato-card mini-card" data-name="mariana lezcano" data-cargo="vocal titular"><img src="LISTA_20260728_180236_0000.png" alt="Mariana Lezcano" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Vocal Titular</span></div></div>
+                    <div class="candidato-card mini-card" data-name="diego osores" data-cargo="revisor de cuentas titular"><img src="LISTA_20260728_182759_0000.png" alt="Diego Osores" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Revisor de Cuentas</span></div></div>
+                    <div class="candidato-card mini-card" data-name="desiree rojas" data-cargo="revisora de cuentas titular"><img src="LISTA_20260728_183807_0000.png" alt="Desiree Rojas" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Revisora de Cuentas</span></div></div>
+                    <div class="candidato-card mini-card" data-name="pablo angel" data-cargo="revisor de cuentas titular"><img src="LISTA_20260728_184808_0000.png" alt="Pablo Angel" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Revisor de Cuentas</span></div></div>
+                    <div class="candidato-card mini-card" data-name="nadia wolfsteller" data-cargo="revisora de cuentas suplente"><img src="LISTA_20260728_190347_0000.png" alt="Nadia Wolfsteller" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Revisora Cuentas Supl.</span></div></div>
+                    <div class="candidato-card mini-card" data-name="ailen basualdo" data-cargo="revisora de cuentas suplente"><img src="LISTA_20260729_132627_0000.png" alt="Ailen Basualdo" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Revisora Cuentas Supl.</span></div></div>
+                    <div class="candidato-card mini-card" data-name="estela lopez" data-cargo="secretaria de derechos humanos"><img src="LISTA_20260729_130741_0000.png" alt="Estela Lopez" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Sec. Derechos Humanos</span></div></div>
+                    <div class="candidato-card mini-card" data-name="karina vega" data-cargo="vocal suplente"><img src="LISTA_20260729_135244_0000.png" alt="Karina Vega" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Vocal Suplente</span></div></div>
+                    <div class="candidato-card mini-card" data-name="paula de angeli" data-cargo="vocal suplente"><img src="LISTA_20260729_135356_0000.png" alt="Paula De Angeli" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Vocal Suplente</span></div></div>
+                    <div class="candidato-card mini-card" data-name="lorena contreras" data-cargo="secretaria de la mujer generos e igualdad"><img src="LISTA_20260729_140806_0000.png" alt="Lorena Contreras" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Sec. de la Mujer y Géneros</span></div></div>
+                    <div class="candidato-card mini-card" data-name="julieta carbonell" data-cargo="secretaria de viviendas"><img src="LISTA_20260729_141842_0000.png" alt="Julieta Carbonell" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Secretaría de Viviendas</span></div></div>
+                    <div class="candidato-card mini-card" data-name="leandro lujan" data-cargo="vocal titular"><img src="LISTA_20260729_141304_0000.png" alt="Leandro Lujan" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Vocal Titular</span></div></div>
+                    <div class="candidato-card mini-card" data-name="maria gerez" data-cargo="vocal titular"><img src="LISTA_20260729_143139_0000.png" alt="Maria Gerez" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Vocal Titular</span></div></div>
+                    <div class="candidato-card mini-card" data-name="ignacio delgado" data-cargo="secretario de asuntos bursatiles"><img src="LISTA_20260729_144011_0000.png" alt="Ignacio Delgado" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Sec. Asuntos Bursátiles</span></div></div>
+                    <div class="candidato-card mini-card" data-name="jose bulacio" data-cargo="secretario de prevision"><img src="LISTA_20260729_183209_0000.png" alt="Jose Bulacio" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Secretaría de Previsión</span></div></div>
+                    <div class="candidato-card mini-card" data-name="lucas chaparro" data-cargo="revisor de cuentas suplente"><img src="LISTA_20260729_182551_0000.png" alt="Lucas Chaparro" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Revisor Cuentas Supl.</span></div></div>
+                    <div class="candidato-card mini-card" data-name="lautaro valcarcel" data-cargo="vocal suplente"><img src="LISTA_20260729_185040_0000.png" alt="Lautaro Valcarcel" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-verde">Vocal Suplente</span></div></div>
+                    <div class="candidato-card mini-card" data-name="silvana sanhueza" data-cargo="vocal suplente"><img src="LISTA_20260729_185736_0000.png" alt="Silvana Sanhueza" class="candidata-img" loading="lazy" decoding="async"><div class="candidato-info"><span class="candidato-puesto text-celeste">Vocal Suplente</span></div></div>
+                </div>
+            </div>
+
+            <div id="no-results" class="text-center" style="display: none; padding: 2rem;">
+                <h3 class="text-dark">No se encontraron candidatos.</h3>
+            </div>
+
+            <!-- Botón de volver -->
+            <div class="text-center mt-6" style="padding-bottom: 3rem;">
+                <a href="index.html" class="btn-candidatos-brillante">
+                    ← Volver al inicio
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: var(--color-darker); padding: 2rem 0; text-align: center; color: #64748b; font-size: 0.85rem;">
+        <div class="container">
+            <p>© 2026 Lista <span style="color: var(--color-celeste);">Celeste</span> y <span style="color: var(--color-verde);">Verde</span> — En Comercio la Lista de los Trabajadores</p>
+        </div>
+    </footer>
+
+    <script>
+        // Buscador de candidatos
+        const searchInput = document.getElementById('candidateSearch');
+        const cards = document.querySelectorAll('.candidato-card');
+        const noResults = document.getElementById('no-results');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            let visible = 0;
+            cards.forEach(card => {
+                const name = card.dataset.name || '';
+                const cargo = card.dataset.cargo || '';
+                const match = name.includes(query) || cargo.includes(query);
+                card.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+            noResults.style.display = visible === 0 ? 'block' : 'none';
+        });
+
+        // Mobile navbar
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+        }
+    </script>
+</body>
+</html>

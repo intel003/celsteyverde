@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -92,8 +92,8 @@
                 <img src="sabrinayvaleriadeespalda.jpg" alt="Sabrina Paredes y Valeria Rodríguez" class="hero-candidatas-img">
                 <div class="slogan-under-image">
                     <div class="slogan-badge bg-dark-brush">Ellos te dicen que es 'con vos' pero...</div>
-                    <div class="slogan-badge bg-celeste-brush">Si de verdad fuera 'con vos', tu sueldo le ganaría a la inflación.</div>
-                    <div class="slogan-badge bg-verde-brush">¡Cambiá y votá la Lista Celeste y Verde de los Trabajadores!</div>
+                    <div class="slogan-badge bg-celeste-brush">Si de verdad fuera 'con vos',<br>tu sueldo le ganaría a la inflación.</div>
+                    <div class="slogan-badge bg-verde-brush">¡Cambiá y votá la Lista Celeste y Verde<br>de los Trabajadores!</div>
                 </div>
             </div>
         </div>
@@ -149,8 +149,18 @@
                 </div>
             </div>
 
-            <!-- Nivel 1: Destacados -->
-            <div class="candidatos-tier mt-6">
+            <!-- Botón de invitación a la página completa de candidatos -->
+            <div class="text-center mt-6">
+                <a href="candidatos.html" class="btn-candidatos-brillante">
+                    <span class="btn-brillante-icon">✨</span>
+                    Conocé a todos los candidatos
+                    <span class="btn-brillante-arrow">→</span>
+                </a>
+                <p style="margin-top:0.75rem; color: var(--color-gray); font-size: 0.9rem;">Hacé clic para conocer a toda la lista Celeste y Verde</p>
+            </div>
+
+            <!-- HIDDEN - Nivel 1: Destacados (movido a candidatos.html) -->
+            <div class="candidatos-tier mt-6" style="display:none;">
                 <div class="candidatas-grid nivel1-grid">
                     <div class="candidato-card" data-name="sergio ortiz" data-cargo="secretario de asuntos gremiales">
                         <img src="sergio_ortiz.png" alt="Sergio Ortiz" class="candidata-img" loading="lazy" decoding="async">
@@ -195,8 +205,8 @@
                 </div>
             </div>
 
-            <!-- Nivel 2: Secretarías y Vocales -->
-            <div class="candidatos-tier mt-6 mb-6">
+            <!-- HIDDEN - Nivel 2 (movido a candidatos.html) -->
+            <div class="candidatos-tier mt-6 mb-6" style="display:none;">
                 <div class="candidatas-grid nivel2-grid">
                     <div class="candidato-card" data-name="laura núñez" data-cargo="secretaria de estadística y defensa al consumidor">
                         <img src="laura.png" alt="Laura Núñez" class="candidata-img" loading="lazy" decoding="async">
@@ -241,8 +251,8 @@
                 </div>
             </div>
 
-            <!-- Otras Secretarías y Vocales (Nivel 3 - Más chicos) -->
-            <div class="candidatos-tier mt-6 mb-6">
+            <!-- HIDDEN - Otras Secretarías (movido a candidatos.html) -->
+            <div class="candidatos-tier mt-6 mb-6" style="display:none;">
                 <div class="candidatas-grid otras-secretarias-grid">
                     <!-- Fila 1 -->
                     <div class="candidato-card mini-card" data-name="romina solano" data-cargo="secretaria de administracion">
