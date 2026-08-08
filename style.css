@@ -812,11 +812,19 @@ body::before {
 
 /* Responsive Design (Mobile First adjustments) */
 @media (max-width: 768px) {
+    .hero {
+        align-items: flex-start;
+        height: auto;
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    
     .hero-content {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
-        padding-top: 5rem;
+        padding-top: 2rem;
     }
     
     .hero h1, .hero-subtitle, .hero-actions, .hero-text {
@@ -824,11 +832,22 @@ body::before {
     }
     
     .hero-candidatas-img {
-        max-height: 45vh;
+        max-height: 40vh;
     }
 
     .hero-image {
         flex-direction: column;
+    }
+    
+    .social-float-container {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+    }
+    
+    .social-float-btn {
+        width: 40px;
+        height: 40px;
     }
 
     .mobile-toggle {
