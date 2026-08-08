@@ -345,7 +345,7 @@ body::before {
 /* Grilla uniforme — página candidatos.html (todas fotos iguales) */
 .candidatos-uniforme-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 2rem;
     max-width: 1300px;
     margin: 0 auto;
@@ -367,7 +367,7 @@ body::before {
 
 .candidatos-uniforme-grid .candidata-img {
     width: 100%;
-    height: 220px;
+    height: 340px;
     object-fit: cover;
     object-position: top;
     border-radius: 16px 16px 0 0;
@@ -388,7 +388,7 @@ body::before {
         gap: 1rem;
     }
     .candidatos-uniforme-grid .candidata-img {
-        height: 160px;
+        height: 220px;
     }
 }
 
