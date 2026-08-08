@@ -968,13 +968,25 @@ body::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('logo-fondo.png');
+    background-image: url('fondoinicio.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     opacity: 0.35;
     z-index: -1;
     pointer-events: none;
+}
+/* LED text animation */
+@keyframes led-flash {
+    0%, 100% { color: #ffffff; text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); }
+    33% { color: var(--color-celeste); text-shadow: 0 0 12px var(--color-celeste); }
+    66% { color: var(--color-verde); text-shadow: 0 0 12px var(--color-verde); }
+}
+
+.led-text {
+    animation: led-flash 3s infinite;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
 /* Blinking Button */
@@ -1036,7 +1048,7 @@ body::before {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 1.5rem;
 }
 
