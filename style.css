@@ -315,8 +315,8 @@ body::before {
 
 /* Grilla Conduccion (Top Tier) */
 .top-tier {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    max-width: 900px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -419,6 +419,22 @@ body::before {
     width: 100%;
     max-height: 400px;
     object-fit: contain;
+}
+
+/* Fotos de conducción aún más grandes */
+.premium-card {
+    transform: scale(1.05);
+    margin: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.premium-card:hover {
+    transform: scale(1.05) translateY(-5px) !important;
+    box-shadow: 0 15px 35px rgba(56,182,255,0.4) !important;
+}
+
+.premium-card .candidata-img {
+    max-height: 550px !important;
 }
 
 /* Las nuevas fotos de abajo se muestran más chicas */
