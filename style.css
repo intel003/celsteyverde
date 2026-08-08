@@ -904,8 +904,14 @@ body::before {
     color: #FFF;
 }
 
+.social-float-btn.fb-bg { background-color: #1877f2; }
 .social-float-btn.wa-bg { background-color: #25d366; }
-.social-float-btn.fb-bg { background-color: #1877F2; }
+.social-float-btn.mail-bg { background-color: #ea4335; }
+
+@keyframes bounce-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
 .social-float-btn.ig-bg { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 .social-float-btn.x-bg { background-color: #000000; }
 
