@@ -183,8 +183,8 @@ body::before {
     color: var(--color-white);
     padding: 0 1rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 45% 55%;
+    gap: 2rem;
     align-items: center;
     text-align: left;
 }
@@ -583,6 +583,8 @@ body::before {
     color: var(--color-dark);
     text-decoration: none;
     transition: var(--transition);
+    position: relative;
+    z-index: 10;
 }
 
 .social-icon:hover {
@@ -805,6 +807,10 @@ body::before {
         max-height: 45vh;
     }
 
+    .hero-image {
+        flex-direction: column;
+    }
+
     .mobile-toggle {
         display: flex;
     }
@@ -1023,16 +1029,16 @@ body::before {
 /* Slogan Under Hero Image */
 .hero-image {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
 }
 
 .slogan-under-image {
-    margin-top: 12px; /* slightly tighter margin */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px; /* increased gap for clearer separation */
     width: 100%;
     max-width: 480px;
