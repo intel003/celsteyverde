@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (mainVideoTrigger2) {
             mainVideoTrigger2.addEventListener('click', () => {
-                openVideoModal('https://twitframe.com/show?url=https://x.com/SYdrny/status/2084027931114766697', 'https://x.com/SYdrny/status/2084027931114766697');
+                openVideoModal('https://www.youtube.com/embed/9ApRKbaXGAc', 'https://youtu.be/9ApRKbaXGAc?si=hgCcBwmlAztlzDYl');
             });
         }
         if (debateCardTrigger) {
