@@ -182,15 +182,18 @@ body::before {
     z-index: 1;
     color: var(--color-white);
     padding: 0 1rem;
-    display: grid;
-    grid-template-columns: 45% 55%;
-    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
     align-items: center;
     text-align: left;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .hero-text {
-    /* Container for text elements */
+    flex: 1;
+    max-width: 600px;
 }
 
 .hero h1 {
@@ -793,7 +796,7 @@ body::before {
 /* Responsive Design (Mobile First adjustments) */
 @media (max-width: 768px) {
     .hero-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         text-align: center;
         gap: 2rem;
         padding-top: 5rem;
@@ -908,8 +911,14 @@ body::before {
     transition: transform 0.3s;
 }
 
+@keyframes float-pulse {
+    0% { transform: scale(1.1); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    50% { transform: scale(1.25); box-shadow: 0 4px 25px rgba(255,255,255,0.5); }
+    100% { transform: scale(1.1); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+}
+
 .social-float-btn:hover {
-    transform: scale(1.1);
+    animation: float-pulse 0.8s infinite;
     color: #FFF;
 }
 
@@ -1048,7 +1057,7 @@ body::before {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1.5rem;
 }
 
