@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Modal Logic
     const mainVideoTrigger = document.getElementById('open-video-modal-btn');
     const mainVideoTrigger2 = document.getElementById('open-video-modal-2-btn');
+    const mainVideoTrigger3 = document.getElementById('open-video-modal-3-btn');
     const debateCardTrigger = document.getElementById('debate-card');
     const videoModal = document.getElementById('videoModal');
     const modalIframe = document.getElementById('modalIframe');
@@ -64,6 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mainVideoTrigger2) {
             mainVideoTrigger2.addEventListener('click', () => {
                 openVideoModal('https://www.youtube.com/embed/9ApRKbaXGAc', 'https://youtu.be/9ApRKbaXGAc?si=hgCcBwmlAztlzDYl');
+            });
+        }
+        if (mainVideoTrigger3) {
+            mainVideoTrigger3.addEventListener('click', () => {
+                openVideoModal('https://www.instagram.com/p/DbbLjo-PJ7N/embed', 'https://www.instagram.com/reel/DbbLjo-PJ7N/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==');
             });
         }
         if (debateCardTrigger) {
