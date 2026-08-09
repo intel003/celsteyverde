@@ -1294,11 +1294,13 @@ body::before {
 
 /* Scroll Snapping for touch screens */
 @media (pointer: coarse) {
-    html {
+    html.scroll-snap-enabled {
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth;
     }
-    .hero, .section, footer {
+    html.scroll-snap-enabled .hero, 
+    html.scroll-snap-enabled .section, 
+    html.scroll-snap-enabled footer {
         scroll-snap-align: start;
         scroll-snap-stop: always;
     }
