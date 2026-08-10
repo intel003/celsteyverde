@@ -48,7 +48,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
     <!-- Favicon (Icono de la pestaña) -->
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GR53KST8CR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GR53KST8CR');
+    </script>
 </head>
 <body>
 
@@ -69,6 +80,7 @@
             </button>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
+                <li><a href="prensa.html">Prensa</a></li>
                 <li><a href="#nosotros">Las Candidatas</a></li>
                 <li><a href="#propuestas">Propuestas</a></li>
                 <li><a href="#sumate">Sumate a Fiscalizar</a></li>
@@ -94,6 +106,9 @@
                     <div class="slogan-badge bg-dark-brush">Ellos te dicen que es 'con vos' pero...</div>
                     <div class="slogan-badge bg-celeste-brush">Si de verdad fuera 'con vos',<br>tu sueldo le ganaría a la inflación.</div>
                     <div class="slogan-badge bg-verde-brush">¡Cambiá y votá la Lista Celeste y Verde<br>de los Trabajadores!</div>
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="#donde-voto" class="btn btn-primary btn-blink-slow">¿DÓNDE VOTO? / REQUISITOS</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -626,6 +641,123 @@
         </div>
     </section>
 
+    <!-- Sección ¿Dónde Voto? / Centros de Votación -->
+    <section id="donde-voto" class="section bg-dark">
+        <div class="container">
+            <div class="section-title text-center mb-6">
+                <h2 style="display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap;">
+                    <span style="font-size: 2.2rem; line-height: 1;">📍</span>
+                    <span class="text-verde" style="font-size: 2.5rem; letter-spacing: -1px;">CENTROS DE VOTACIÓN</span>
+                </h2>
+                <p>Consultá las direcciones oficiales de los 5 centros de votación habilitados en CABA para este 3 de septiembre.</p>
+            </div>
+
+            <!-- Banner de Requisitos -->
+            <div class="voto-requirements-banner">
+                <div class="voto-banner-icon">📋</div>
+                <div class="voto-banner-text" style="width: 100%;">
+                    <h4 style="color: #fbbf24; font-size: 1.2rem; font-weight: 900; margin-bottom: 0.8rem;">
+                        REQUISITOS OBLIGATORIOS PARA VOTAR ESTE 3 DE SEPTIEMBRE:
+                    </h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.8rem;">
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.98rem; color: #ffffff; background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 8px; border-left: 3px solid #00bf63;">
+                            <span style="color: #00bf63; font-weight: 900;">1.</span> DNI físico vigente.
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.98rem; color: #ffffff; background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 8px; border-left: 3px solid #00bf63;">
+                            <span style="color: #00bf63; font-weight: 900;">2.</span> Carnet de afiliado o carnet digital mediante app SoySEC.
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.98rem; color: #ffffff; background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 8px; border-left: 3px solid #00bf63;">
+                            <span style="color: #00bf63; font-weight: 900;">3.</span> Antigüedad mínima de 6 meses de afiliación continua previa a la elección.
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.98rem; color: #ffffff; background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 8px; border-left: 3px solid #00bf63;">
+                            <span style="color: #00bf63; font-weight: 900;">4.</span> Último recibo de sueldo (donde se acredite el descuento del aporte sindical al día).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mapa Interactivo Leaflet -->
+            <div class="voto-map-container mb-6">
+                <div id="map" style="width: 100%; height: 380px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 1;"></div>
+            </div>
+
+            <!-- 5 Tarjetas de Centros de Votación -->
+            <div class="voto-grid">
+
+                <!-- Centro 1 -->
+                <div class="voto-card">
+                    <div>
+                        <span class="voto-card-badge">CABA - Sede 1</span>
+                        <h3 class="voto-card-title">Centro de Votación 1</h3>
+                        <p class="voto-card-address">
+                            <span>📌</span> Av. Julio A. Roca 644, CABA
+                        </p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Julio+A.+Roca+644+CABA" target="_blank" rel="noopener noreferrer" class="btn-maps">
+                        CÓMO LLEGAR EN GOOGLE MAPS 📍
+                    </a>
+                </div>
+
+                <!-- Centro 2 -->
+                <div class="voto-card">
+                    <div>
+                        <span class="voto-card-badge">CABA - Sede 2</span>
+                        <h3 class="voto-card-title">Centro de Votación 2</h3>
+                        <p class="voto-card-address">
+                            <span>📌</span> Bartolomé Mitre 946, CABA
+                        </p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Bartolome+Mitre+946+CABA" target="_blank" rel="noopener noreferrer" class="btn-maps">
+                        CÓMO LLEGAR EN GOOGLE MAPS 📍
+                    </a>
+                </div>
+
+                <!-- Centro 3 -->
+                <div class="voto-card">
+                    <div>
+                        <span class="voto-card-badge">CABA - Sede 3</span>
+                        <h3 class="voto-card-title">Centro de Votación 3</h3>
+                        <p class="voto-card-address">
+                            <span>📌</span> Suipacha 84, CABA
+                        </p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Suipacha+84+CABA" target="_blank" rel="noopener noreferrer" class="btn-maps">
+                        CÓMO LLEGAR EN GOOGLE MAPS 📍
+                    </a>
+                </div>
+
+                <!-- Centro 4 -->
+                <div class="voto-card">
+                    <div>
+                        <span class="voto-card-badge">CABA - Sede 4</span>
+                        <h3 class="voto-card-title">Centro de Votación 4</h3>
+                        <p class="voto-card-address">
+                            <span>📌</span> Moreno 628, CABA
+                        </p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Moreno+628+CABA" target="_blank" rel="noopener noreferrer" class="btn-maps">
+                        CÓMO LLEGAR EN GOOGLE MAPS 📍
+                    </a>
+                </div>
+
+                <!-- Centro 5 -->
+                <div class="voto-card">
+                    <div>
+                        <span class="voto-card-badge">CABA - Sede 5</span>
+                        <h3 class="voto-card-title">Centro de Votación 5</h3>
+                        <p class="voto-card-address">
+                            <span>📌</span> Av. Rivadavia 1447, CABA
+                        </p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Rivadavia+1447+CABA" target="_blank" rel="noopener noreferrer" class="btn-maps">
+                        CÓMO LLEGAR EN GOOGLE MAPS 📍
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Bloque 3: Un Sindicato Abierto (Fiscalización) -->
     <section id="sumate" class="section bg-gradient">
         <div class="container text-center text-white">
@@ -744,6 +876,31 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // Init Map if element exists
+        if(document.getElementById('map')) {
+            var map = L.map('map').setView([-34.6080, -58.3820], 14);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            var locations = [
+                { name: "Centro de Votación 1 (Av. Julio A. Roca 644)", lat: -34.6106, lng: -58.3755, url: "https://www.google.com/maps/search/?api=1&query=Av.+Julio+A.+Roca+644+CABA" },
+                { name: "Centro de Votación 2 (Bartolomé Mitre 946)", lat: -34.6038, lng: -58.3792, url: "https://www.google.com/maps/search/?api=1&query=Bartolome+Mitre+946+CABA" },
+                { name: "Centro de Votación 3 (Suipacha 84)", lat: -34.6046, lng: -58.3807, url: "https://www.google.com/maps/search/?api=1&query=Suipacha+84+CABA" },
+                { name: "Centro de Votación 4 (Moreno 628)", lat: -34.6121, lng: -58.3768, url: "https://www.google.com/maps/search/?api=1&query=Moreno+628+CABA" },
+                { name: "Centro de Votación 5 (Av. Rivadavia 1447)", lat: -34.6091, lng: -58.3888, url: "https://www.google.com/maps/search/?api=1&query=Av.+Rivadavia+1447+CABA" }
+            ];
+
+            locations.forEach(function(loc) {
+                L.marker([loc.lat, loc.lng]).addTo(map)
+                    .bindPopup(`<b>${loc.name}</b><br><a href="${loc.url}" target="_blank">Cómo llegar 📍</a>`);
+            });
+        }
+    </script>
 </body>
 </html>
 
