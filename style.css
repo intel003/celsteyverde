@@ -1601,3 +1601,17 @@ body::before {
     color: var(--color-gray);
     box-shadow: none;
 }
+
+/* Animaciones para los emojis de las manos en el footer */
+@keyframes point-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-5px); }
+}
+@keyframes point-right {
+    from { transform: translateX(0); }
+    to { transform: translateX(5px); }
+}
+@keyframes bounce-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
