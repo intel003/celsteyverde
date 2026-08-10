@@ -1615,3 +1615,23 @@ body::before {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(5px); }
 }
+
+/* Animación de puntero de clic en botones de prensa */
+.btn-prensa {
+    position: relative;
+}
+.btn-prensa::after {
+    content: "👆";
+    position: absolute;
+    bottom: -15px;
+    right: 20px;
+    font-size: 1.8rem;
+    animation: tap-click 1.5s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 10;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+@keyframes tap-click {
+    0%, 100% { transform: translateY(10px) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-5px) scale(0.9); opacity: 1; }
+}
