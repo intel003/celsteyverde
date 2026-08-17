@@ -1602,6 +1602,42 @@ body::before {
     box-shadow: none;
 }
 
+/* Botón Rojo Parpadeante para el Estatuto */
+.btn-red-pulse {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 0.75rem 1.2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: #e63946;
+    color: #fff;
+    border: 1px solid #e63946;
+    animation: btn-red-pulse-anim 1.5s infinite;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+}
+
+.btn-red-pulse:hover {
+    background: #c1121f;
+    border-color: #c1121f;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.6);
+    animation-play-state: paused;
+}
+
+@keyframes btn-red-pulse-anim {
+    0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(230, 57, 70, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
+}
+
 /* Animaciones para los emojis de las manos en el footer */
 @keyframes point-left {
     from { transform: translateX(0); }
