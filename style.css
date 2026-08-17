@@ -155,8 +155,8 @@ body::before {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
+    min-height: 100vh;
+    padding: 120px 0 60px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1636,6 +1636,46 @@ body::before {
     0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7); }
     70% { box-shadow: 0 0 0 10px rgba(230, 57, 70, 0); }
     100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
+}
+
+/* LED Cycle Animation */
+@keyframes led-cycle {
+    0%, 25% {
+        background-color: #e63946; /* red */
+        box-shadow: 0 0 15px rgba(230, 57, 70, 0.8), 0 0 30px rgba(230, 57, 70, 0.5);
+    }
+    33%, 58% {
+        background-color: var(--color-verde); /* green */
+        box-shadow: 0 0 15px rgba(0, 191, 99, 0.8), 0 0 30px rgba(0, 191, 99, 0.5);
+    }
+    66%, 91% {
+        background-color: var(--color-celeste); /* celeste */
+        box-shadow: 0 0 15px rgba(0, 173, 239, 0.8), 0 0 30px rgba(0, 173, 239, 0.5);
+    }
+    100% {
+        background-color: #e63946; /* red */
+        box-shadow: 0 0 15px rgba(230, 57, 70, 0.8), 0 0 30px rgba(230, 57, 70, 0.5);
+    }
+}
+
+.btn-led-cycle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    color: #fff !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    transition: transform 0.2s;
+    animation: led-cycle 4s infinite;
+}
+
+.btn-led-cycle:hover {
+    transform: scale(1.05);
+    animation-play-state: paused;
 }
 
 /* Animaciones para los emojis de las manos en el footer */
